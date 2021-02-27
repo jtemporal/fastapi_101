@@ -11,5 +11,5 @@ pip install -r requirements.txt
 ## Running
 
 ```
-uvicorn main:app --reload
+uvicorn quotes:app --reload
 ```
