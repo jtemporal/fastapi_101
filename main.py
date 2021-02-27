@@ -30,3 +30,9 @@ def list_quotes():
 def quote_detail(item_id: str):
     detailed = {"quote_id": item_id, "quote": QUOTES_DB[item_id]}
     return detailed
+
+
+@app.post("/quotes")
+def create_quote(item: Quote):
+    QUOTES_DB[item.name] = item.message
+    return {"message": f"Quote '{item.name}' was created!"}
