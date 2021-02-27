@@ -18,3 +18,9 @@ def hello():
 def list_quotes():
     all_quotes = {quote: QUOTES_DB[quote] for quote in QUOTES_DB}
     return all_quotes
+
+
+@app.get("/quotes/{item_id}")
+def quote_detail(item_id: str):
+    detailed = {"quote_id": item_id, "quote": QUOTES_DB[item_id]}
+    return detailed
