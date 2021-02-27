@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
 
 
 app = FastAPI()
@@ -7,6 +8,11 @@ QUOTES_DB = {
     "forty_two": "The answer to life the universe and everything",
     "harry_met_sally": "I'll have what she's having"
 }
+
+
+class Quote(BaseModel):
+    name: str
+    message: str
 
 
 @app.get("/")
