@@ -8,6 +8,13 @@ QUOTES_DB = {
     "harry_met_sally": "I'll have what she's having"
 }
 
+
 @app.get("/")
 def hello():
     return {"hello": "world"}
+
+
+@app.get("/quotes")
+def list_quotes():
+    all_quotes = {quote: QUOTES_DB[quote] for quote in QUOTES_DB}
+    return all_quotes
