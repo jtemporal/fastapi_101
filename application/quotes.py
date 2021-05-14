@@ -15,6 +15,11 @@ class Quote(BaseModel):
     message: str
 
 
+@app.get("/")
+def home():
+    return "Welcome to the Quotes Library!"
+
+
 @app.get("/quotes")
 def list_quotes():
     return QUOTES_DB
