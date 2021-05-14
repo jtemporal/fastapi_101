@@ -1,5 +1,5 @@
 from fastapi import FastAPI, status
-from pydantic import BaseModel
+from .models import Quote
 
 
 app = FastAPI()
@@ -8,11 +8,6 @@ QUOTES_DB = {
     "forty_two": "The answer to life the universe and everything",
     "harry_met_sally": "I'll have what she's having"
 }
-
-
-class Quote(BaseModel):
-    name: str
-    message: str
 
 
 @app.get("/")
